@@ -2,3 +2,8 @@
 	margin-top: 50px;
 	text-align: center;
 }
+.decision{
+	background-color:#CDC5BF;
+	border:thin solid #000000;
+	font-weight: bold;
+}
