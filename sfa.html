@@ -24,6 +24,8 @@
    			  message="Your journey begins at a fork in the road.";
    			  decision1 = "Take the Path";
    			  decision2 = "Take the Bridge";
+          // делаем вторую кнопку видимой
+          document.getElementById("decision2").style.visibility="visible";
    			  break;
    			case 1:
               if(nomber==1){
@@ -51,6 +53,8 @@
               	message = "Sorry, a witch lives in the house and you just became part of her stew.";
               	decision1 = "Start Over";
               	decision2 = "";
+                // делаем вторую кнопку невидимой
+                document.getElementById("decision2").style.visibility="hidden"
               }
    			  break;
    			case 3:
@@ -59,6 +63,7 @@
               	message = "Sorry, a troll lives on the other side of the bridge and you just became his lunch.";
               	decision1 = "Start Over";
               	decision2 = "";
+                document.getElementById("decision2").style.visibility="hidden"
               }
               else{
               	curScene=7;
@@ -72,12 +77,15 @@
               	curScene=8;
               	 decision1 = "?";
               	 decision2 = "?";
+                 document.getElementById("decision1").style.visibility="hidden";
+                 document.getElementById("decision2").style.visibility="hidden";
               }
               else{
               	curScene=5;
               	message = "Sorry, you became part of the witch's stew.";
               	decision1 = "Start Over";
               	decision2 = "";
+                document.getElementById("decision2").style.visibility="hidden";
               }
    			break;
    			case 5:
@@ -96,11 +104,14 @@
               	 message = "Sorry, you became the troll's tasty lunch.";
               	 decision1 = "Start Over";
               	 decision2 = "";
+                 document.getElementById("decision2").style.visibility="hidden";
               }
               else{
               	curScene=9;
               	decision1="?";
               	decision2="?";
+                document.getElementById("decision1").style.visibility="hidden";
+                document.getElementById("decision2").style.visibility="hidden";
               }
    			break;
    		}
@@ -117,8 +128,13 @@
    	  	<br>
    	  	<div id="sceneText"></div>
         <br>
-   	    <span  id="decision1" class="decision" onclick="changeScene(1)">Start Game</span>
-   	    <span  id="decision2" class="decision" onclick="changeScene(2)"></span>
+   	    <span  id="decision1" class="decision"  onclick="changeScene(1)"
+        onmouseover="this.className='overdecision'"
+        onmouseout="this.className='decision'">Start Game</span>
+   	    <span  id="decision2" class="decision" onclick="changeScene(2)"
+        onmouseover="this.className='overdecision'"
+        onmouseout="this.className='decision'"
+        style="visibility:hidden"></span>
    	  </div>
    </body>
 </html>

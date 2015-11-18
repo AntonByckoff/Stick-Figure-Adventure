@@ -6,4 +6,11 @@
 	background-color:#CDC5BF;
 	border:thin solid #000000;
 	font-weight: bold;
+	cursor: pointer;
+}
+.overdecision{
+	background-color:#EEEEEE;
+	border:thin solid #000000;
+	font-weight: bold;
+	cursor: pointer;
 }
