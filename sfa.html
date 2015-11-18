@@ -119,6 +119,21 @@
         replaceNodeText("sceneText",message);
         replaceNodeText("decision1",decision1);
         replaceNodeText("decision2",decision2);
+
+        // обновление истории пройденных сцен
+        var historyDecision=document.getElementById("history");
+        if(curScene!=0){
+        // создаем новый эл-т параграф
+         var decisionElem=document.createElement("p");
+          decisionElem.appendChild(document.createTextNode("Decision "+nomber+" -> Scene "+curScene+" : "+message));
+         //добавляем это элемент в конец history
+         historyDecision.appendChild(decisionElem);
+       }
+       else{
+        // очищаем историю переходов
+        while(historyDecision.firstChild)
+           historyDecision.removeChild(historyDecision.firstChild);
+       }  
    	}
    	</script>
    </head>
@@ -135,6 +150,8 @@
         onmouseover="this.className='overdecision'"
         onmouseout="this.className='decision'"
         style="visibility:hidden"></span>
+        <br>
+        <div id ="history"></div>  
    	  </div>
    </body>
 </html>
